@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>臺北資料夾 File in Taipei 2026</title>
+<style>
+:root{--navy:#1F3A6B;--pink:#F3DCE3;--blue:#DCEAF5;--cream:#FAF8F2;--mag:#A83A6B;--ink:#222;--line:#D9D4C7;--face:#C98FA8;--cover:#7FA6CC;--video:#4A4A4A}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"PingFang TC","Microsoft JhengHei","Noto Sans TC",sans-serif;line-height:1.7}
+a{color:var(--navy)}
+a:hover{color:var(--mag)}
+.en{color:#666;font-size:.92em}
+
+/* 固定 menu */
+.menu{position:sticky;top:0;z-index:10;background:#fff;border-bottom:2px solid var(--navy)}
+.menu .in{max-width:1100px;margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;gap:24px}
+.logo{font-weight:700;color:var(--navy);text-decoration:none;font-size:17px;margin-right:auto;cursor:pointer;white-space:nowrap}
+.nav{display:flex;gap:24px;align-items:center}
+.nav a{text-decoration:none;color:var(--navy);font-weight:600;cursor:pointer}
+.burger{display:none;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+@media(max-width:768px){
+  .nav{display:none}
+  .nav.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;left:0;right:0;top:56px;background:#fff;border-bottom:2px solid var(--navy);padding:12px 16px 16px;gap:14px}
+  .burger{display:block}
+}
+.urlbar{background:#EFEBE0;color:#555;font-size:12px;padding:3px 16px;font-family:Menlo,monospace}
+.urlbar span{color:#999;margin-right:8px;font-family:inherit}
+
+.wrap{max-width:1100px;margin:0 auto;padding:16px}
+section{padding:28px 0;scroll-margin-top:64px}
+h2{margin:0 0 16px;color:var(--navy);font-size:22px}
+h2 .en,h3 .en{font-weight:400;margin-left:8px}
+h3{margin:18px 0 6px;color:var(--navy);font-size:18px}
+p{margin:0 0 10px}
+.muted{color:#666;font-size:14px}
+
+/* 首頁 ① */
+.hero{background:var(--navy);color:#fff;padding:48px 28px;border-radius:12px}
+.hero .t1{font-size:34px;font-weight:700;line-height:1.2;margin:0}
+.hero .t2{font-size:20px;color:#A9C8E8;margin:4px 0 16px}
+.hero p{color:#E6EEF8;max-width:720px}
+.hero .en{color:#B8CCE6}
+
+/* 首頁 ②③ */
+.sec-artists{background:var(--pink);border-radius:12px;padding:24px}
+.sec-works{background:var(--blue);border-radius:12px;padding:24px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.grid.works{grid-template-columns:repeat(auto-fill,minmax(125px,1fr))}
+@media(min-width:769px){.grid{grid-template-columns:repeat(4,1fr);gap:16px}.grid.works{grid-template-columns:repeat(5,1fr)}}
+/* 索引卡：上緣一個資料夾分頁標籤，卡身白底細框 */
+.card{cursor:pointer;color:var(--navy)}
+.card .tab{display:inline-block;background:var(--navy);color:#fff;font-size:11px;letter-spacing:.5px;padding:2px 12px 1px;border-radius:6px 6px 0 0;font-family:Menlo,monospace}
+.card .body{background:#fff;border:1.5px solid var(--navy);border-radius:0 8px 8px 8px;overflow:hidden;box-shadow:2px 2px 0 rgba(31,58,107,.12)}
+.card:hover .tab{background:var(--mag)}
+.card:hover .body{border-color:var(--mag);box-shadow:2px 2px 0 rgba(168,58,107,.2)}
+.card .cap{padding:8px 10px;font-size:14px;line-height:1.45;border-top:1px dashed #C9CFDA}
+.card .cap b{display:block}
+.block{display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;text-align:center;padding:8px}
+.ph-face{background:var(--face);aspect-ratio:1/1}
+.ph-cover{background:var(--cover);aspect-ratio:4/3}
+.ph-video{background:var(--video)}
+
+/* 頁尾 ④ */
+.footer{background:var(--navy);color:#D6E4F5;border-radius:12px;padding:24px 28px;font-size:14px}
+.footer div{margin:2px 0}
+.footer .en{color:#A9C8E8}
+
+/* 專頁 */
+.head{display:grid;grid-template-columns:200px 1fr;gap:24px;border-radius:12px;padding:24px}
+.head.artist{background:var(--pink)}
+.head.work{background:var(--blue)}
+@media(max-width:600px){.head{grid-template-columns:1fr}}
+.face{width:200px;height:200px;border-radius:50%}
+.name{font-size:26px;font-weight:700;color:var(--navy);margin:0;line-height:1.3}
+.name small{display:block;font-size:16px;font-weight:400;color:#555;margin-top:4px}
+.links a{display:inline-block;margin:6px 12px 0 0;padding:6px 12px;border:1px solid var(--navy);border-radius:20px;text-decoration:none;font-size:14px}
+.links a:hover{border-color:var(--mag)}
+.chips a{display:inline-block;margin:0 10px 6px 0;font-weight:700;cursor:pointer;color:var(--mag);text-decoration:underline}
+
+/* 作品圖瀏覽 */
+.gallery .main{aspect-ratio:3/2;border-radius:10px;font-size:18px}
+.thumbs{display:flex;gap:8px;margin-top:8px;overflow-x:auto;padding-bottom:4px}
+.thumbs .block{flex:0 0 96px;height:68px;border-radius:6px;cursor:pointer;border:3px solid transparent;font-size:12px}
+.thumbs .block.on{border-color:var(--mag)}
+.work-body{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin-top:20px}
+@media(max-width:768px){.work-body{grid-template-columns:1fr}}
+dl{margin:0}
+dt{font-weight:700;color:var(--navy);margin-top:12px}
+dd{margin:0}
+</style>
+</head>
+<body>
+
+<div style="background:#A83A6B;color:#fff;font-size:13px;text-align:center;padding:4px 16px">網站點擊原型：版面與連結供確認用，人名、作品與文字都是示意，不是真實資料</div>
+<div class="menu">
+  <div class="in">
+    <a class="logo" id="logo">臺北資料夾 File in Taipei</a>
+    <button class="burger" id="burger">選單 Menu</button>
+    <div class="nav" id="nav">
+      <a id="navArtists">藝術家 Artists</a>
+      <a id="navWorks">作品 Works</a>
+    </div>
+  </div>
+</div>
+<div class="urlbar"><span>網址</span><code id="url"></code></div>
+
+<div id="app" class="wrap"></div>
+
+<script>
+/* ===== 示意資料：人名、作品與文字都是為了看版型擬的，不是真實資料 ===== */
+const ARTISTS = [
+  {id:'A01', name:'Mira Chen', nameZh:'陳以安', nat:['臺灣','Taiwan'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
+   bio:[[
+     '陳以安 1996 年生於臺北，目前在臺北與東京兩地工作。她以錄像與織品為主要媒材，關注城市裡被忽略的日常物件：路邊的塑膠椅、店家的手寫招牌、臨時搭起來的棚架。',
+     '近年作品圍繞「臨時」這個主題：這些東西不是為了長久存在而被製造，卻在街上停留了幾十年。她把它們拆開、重新織過，再放回原本的位置，讓路人重新看見。',
+     '曾參與臺北與東京多個替代空間的聯展，2025 年在大阪駐村三個月。'
+   ],[
+     'Mira Chen (b. 1996, Taipei) works between Taipei and Tokyo. Her practice combines video and textiles and looks at the everyday objects a city stops noticing: roadside plastic stools, hand-painted shop signs, makeshift canopies.',
+     'Recent works circle around the idea of the temporary: things made without any intention of lasting, yet still standing on the street decades later. She takes them apart, re-weaves them and puts them back where they were, so that passers-by see them again.',
+     'She has shown in artist-run spaces in Taipei and Tokyo and spent three months on a residency in Osaka in 2025.'
+   ]]},
+  {id:'A02', name:'Kenji Arai', nameZh:'新井健司', nat:['日本','Japan'], links:[['Instagram','https://example.com/']],
+   bio:[[
+     '新井健司是來自大阪的版畫家，擅長用木刻記錄市場與港口的勞動場景。在臺北的兩個月裡，他每天清晨五點到批發市場畫速寫，回到工作室再刻成版畫。'
+   ],[
+     'Kenji Arai is a printmaker from Osaka who records the labour of markets and harbours in woodcut. During his two months in Taipei he sketched at a wholesale market from five every morning and carved the scenes into prints back in the studio.'
+   ]]},
+  {id:'A03', name:'Sora Park', nameZh:'朴素拉', nat:['韓國','Korea'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
+   bio:[[
+     '朴素拉 1994 年生於釜山，創作以聲音裝置為主。她收集城市裡的機械聲響：捷運關門的提示音、冷氣室外機、夜市的叫賣，再把它們編成可以坐在裡面聽的小房間。',
+     '這次駐地期間，她在大稻埕錄下三十多個小時的環境音，整理成作品《聽見一條街》，並與布蘭特合作了《騎樓客廳》的聲音部分。'
+   ],[
+     'Sora Park (b. 1994, Busan) makes sound installations. She collects the mechanical sounds of a city, metro door chimes, air-conditioner units, night-market calls, and composes them into small rooms you can sit inside and listen to.',
+     'During the residency she recorded over thirty hours of ambient sound in Dadaocheng, which became Hearing a Street, and made the sound for Arcade Living Room with Lukas Brandt.'
+   ]]},
+  {id:'A04', name:'Lukas Brandt', nameZh:'盧卡斯．布蘭特', nat:['德國','Germany'], links:[['作品網頁 Website','https://example.com/']],
+   bio:[[
+     '盧卡斯．布蘭特 1992 年生於萊比錫，建築背景出身的裝置藝術家。他的作品常以木構與帆布搭出可以走進去的臨時空間，探討城市裡「誰可以使用哪一塊地」的問題。',
+     '在萊比錫，他曾與社區合作，把一塊閒置停車場改成為期一個夏天的露天客廳；在臺北，他把同樣的方法帶到一條巷子的騎樓。',
+     '他說臺北的騎樓是他見過最有趣的公共空間：既是私人店面的延伸，又是所有人都能走的路。這次的作品《騎樓客廳》就是從這個觀察出發。',
+     '作品拆除後，所有木料都送給了附近的木工行。'
+   ],[
+     'Lukas Brandt (b. 1992, Leipzig) is an installation artist trained in architecture. He builds walk-in temporary spaces out of timber and canvas, asking who gets to use which piece of a city.',
+     'In Leipzig he worked with a neighbourhood to turn an unused car park into an open-air living room for one summer; in Taipei he brought the same method to the arcade of a single lane.',
+     'He calls Taipei\'s arcades the most interesting public space he has seen: an extension of private shopfronts that everyone is allowed to walk through. Arcade Living Room grew out of this observation.',
+     'When the piece came down, all the timber went to a carpenter\'s workshop nearby.'
+   ]]},
+  {id:'A05', name:'Nalin Suksawat', nameZh:'娜琳．素薩瓦', nat:['泰國','Thailand'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
+   bio:[[
+     '娜琳．素薩瓦來自清邁，以攝影與手工書創作。她在臺北拍攝了八十位在便利商店上夜班的人，做成一本可以翻閱的作品《夜班》。'
+   ],[
+     'Nalin Suksawat, from Chiang Mai, works in photography and handmade books. In Taipei she photographed eighty people working night shifts in convenience stores and bound them into a book you can leaf through, Night Shift.'
+   ]]},
+  {id:'A06', name:'Camille Roux', nameZh:'卡蜜兒．胡', nat:['法國','France'], links:[['Instagram','https://example.com/']],
+   bio:[[
+     '卡蜜兒．胡 1995 年生於里昂，創作以陶與食物為核心。她常在展場裡煮東西，讓觀眾一邊吃一邊看作品。',
+     '這次她和萬華的一間老麵攤合作，用攤子用了三十年的舊碗翻模，做出一組新碗，展期間每天中午在展場煮一鍋麵。'
+   ],[
+     'Camille Roux (b. 1995, Lyon) works with ceramics and food. She often cooks in the exhibition space so that visitors eat while they look.',
+     'For this project she worked with an old noodle stall in Wanhua, casting a new set of bowls from the ones the stall has used for thirty years, and cooked a pot of noodles in the gallery every day at noon.'
+   ]]},
+  {id:'A07', name:'Daniel Okafor', nameZh:'丹尼爾．歐卡佛', nat:['奈及利亞','Nigeria'], video:true, links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
+   bio:[[
+     '丹尼爾．歐卡佛 1993 年生於拉哥斯，影像創作者。他的作品多為單頻道錄像，長度在十到二十分鐘之間，拍的是城市裡的移動：摩托車、公車、外送員。',
+     '在臺北，他跟拍了三位外送員各一個晚上，剪成作品《三個晚上》。'
+   ],[
+     'Daniel Okafor (b. 1993, Lagos) is a video artist. His single-channel works, ten to twenty minutes long, follow movement through cities: scooters, buses, delivery riders.',
+     'In Taipei he followed three delivery riders for one night each and edited the footage into Three Nights.'
+   ]]},
+  {id:'A08', name:'Ana Reyes', nameZh:'安娜．雷耶斯', nat:['菲律賓','Philippines'], video:true, links:[['Instagram','https://example.com/']],
+   bio:[[
+     '安娜．雷耶斯是來自馬尼拉的動畫導演。她用手繪逐格動畫記錄自己在臺北住的那間公寓窗外每天的變化，完成十二分鐘的作品《窗》。'
+   ],[
+     'Ana Reyes is an animator from Manila. She drew the view from her Taipei apartment window frame by frame, day after day, and turned the drawings into the twelve-minute film Window.'
+   ]]},
+];
+
+/* 作品 × 藝術家對應表：一件作品可多位，一位可多件 */
+const WORKS = [
+  {id:'W01', title:['臨時的椅子','Temporary Chairs'], artists:['A01'], imgs:4,
+   meta:['織品、錄像｜尺寸依場地｜迪化街某騎樓','Textile, video | dimensions variable | an arcade on Dihua Street'],
+   thanks:['迪化街的三間店家借出了他們的椅子。','Three shops on Dihua Street lent their chairs.'],
+   desc:[['陳以安向迪化街的店家借來十二張放在門口的塑膠椅，把椅面拆下來，用同色的尼龍繩重新編織，再放回原位。展期間椅子照常被店家和路人使用。',
+          '旁邊的螢幕播放一支八分鐘的錄像，記錄椅子被借走與送回的過程。'],
+         ['Mira Chen borrowed twelve plastic stools that shops on Dihua Street keep by their doors, removed the seats, re-wove them in nylon cord of the same colour and put them back. Throughout the exhibition the stools stayed in use by shopkeepers and passers-by.',
+          'A screen beside them plays an eight-minute video of the stools being borrowed and returned.']]},
+  {id:'W02', title:['招牌','Signs'], artists:['A01','A02'], imgs:3,
+   meta:['木刻版畫印於棉布｜60 × 90 cm，共 6 件｜展場','Woodcut on cotton | 60 × 90 cm, set of 6 | gallery'],
+   desc:[['新井健司刻了六塊臺北老店手寫招牌的木版，陳以安把它們印在棉布上，再縫成可以掛在騎樓下的布幔。字是店家的字，布是市場買的布。'],
+         ['Kenji Arai carved six woodblocks after hand-painted signs of old Taipei shops; Mira Chen printed them on cotton and sewed the cloth into banners that hang under an arcade. The lettering belongs to the shops, the cloth came from the market.']]},
+  {id:'W03', title:['市場，清晨五點','Market, 5 a.m.'], artists:['A01','A02'], imgs:5,
+   meta:['木刻版畫、織品｜各 40 × 55 cm，共 12 幅｜展場','Woodcut, textile | 40 × 55 cm each, 12 prints | gallery'],
+   desc:[['十二幅版畫記錄批發市場從卸貨到收攤的一個早上。新井健司負責速寫與刻版，陳以安把其中四幅改印在回收的米袋上。'],
+         ['Twelve prints follow one morning at a wholesale market, from unloading to closing. Kenji Arai sketched and carved; Mira Chen printed four of them on recycled rice sacks.']]},
+  {id:'W04', title:['聽見一條街','Hearing a Street'], artists:['A03'], imgs:3,
+   meta:['聲音裝置、木構、六聲道｜300 × 300 × 240 cm｜展場','Sound installation, timber, 6 channels | 300 × 300 × 240 cm | gallery'],
+   desc:[['一個三公尺見方的小房間，六個喇叭分別播放大稻埕一天裡六個時段的環境音：早市、午後的茶行、傍晚的廟口、夜裡的巷子。觀眾坐在裡面，用十五分鐘聽完一條街的一天。',
+          '所有聲音在 2026 年 3 月到 5 月間錄製，沒有後製加工。'],
+         ['A three-metre room with six speakers, each playing the ambient sound of one part of a day in Dadaocheng: the morning market, a tea shop in the afternoon, the temple square at dusk, a lane at night. Visitors sit inside and hear a street\'s whole day in fifteen minutes.',
+          'All sound was recorded between March and May 2026 and left unprocessed.']]},
+  {id:'W05', title:['騎樓客廳','Arcade Living Room'], artists:['A03','A04'], imgs:4,
+   meta:['木構、帆布、聲音｜依場地｜民生西路某巷騎樓','Timber, canvas, sound | site-specific | an arcade off Minsheng West Road'],
+   thanks:['巷口的五金行與里長提供了用電與夜間看顧。','The hardware shop at the corner and the neighbourhood chief provided power and kept an eye on it at night.'],
+   desc:[['布蘭特在一段二十公尺的騎樓裡，用木構與帆布搭出三組可以坐下來的「客廳」：沙發、矮桌、書架。朴素拉為每一組客廳錄了一段不同的聲音：收音機、鄰居的對話、雨。',
+          '展期四週，客廳每天開放到晚上十點，由巷子裡的店家輪流看管。'],
+         ['Along twenty metres of arcade, Lukas Brandt built three "living rooms" out of timber and canvas: sofa, low table, bookshelf. Sora Park recorded a different sound for each: a radio, neighbours talking, rain.',
+          'For four weeks the rooms stayed open until ten at night, looked after in turns by the shops in the lane.']]},
+  {id:'W06', title:['停車場的夏天','A Summer in the Car Park'], artists:['A04'], imgs:3,
+   meta:['文件、模型、照片｜模型 120 × 80 × 40 cm｜展場','Documents, model, photographs | model 120 × 80 × 40 cm | gallery'],
+   desc:[['布蘭特 2024 年在萊比錫完成的計畫紀錄：一座閒置停車場變成社區客廳的三個月。這次以模型、照片與當時的會議紀錄呈現，作為《騎樓客廳》的前傳。'],
+         ['Documentation of Brandt\'s 2024 project in Leipzig, where an unused car park became a neighbourhood living room for three months. Shown here as a model, photographs and the meeting notes of the time, a prelude to Arcade Living Room.']]},
+  {id:'W07', title:['夜班','Night Shift'], artists:['A05'], imgs:4,
+   meta:['攝影、手工書｜書 21 × 28 cm，80 頁；照片 30 × 40 cm，共 20 幅｜展場','Photography, handmade book | book 21 × 28 cm, 80 pages; prints 30 × 40 cm, 20 pieces | gallery'],
+   thanks:['感謝八十位願意在凌晨三點被拍的夜班店員。','Thanks to the eighty night-shift clerks who agreed to be photographed at three in the morning.'],
+   desc:[['素薩瓦在兩個月裡走訪臺北八十間便利商店，每一間都在凌晨三點拍下當班的店員一張肖像，並請對方寫下一句話。八十張照片與八十句話裝訂成一本書，觀眾可以戴手套翻閱。',
+          '其中二十張放大輸出掛在牆上。'],
+         ['Over two months Nalin Suksawat visited eighty convenience stores in Taipei, photographing the clerk on duty at three in the morning and asking each for one sentence. The eighty portraits and sentences are bound into a book that visitors may leaf through with gloves.',
+          'Twenty of the portraits are enlarged and hung on the wall.']]},
+  {id:'W08', title:['一碗麵','A Bowl of Noodles'], artists:['A06'], imgs:3,
+   meta:['陶、食物、行為｜碗 12 件；每日中午一場｜展場','Ceramics, food, performance | 12 bowls; one serving daily at noon | gallery'],
+   thanks:['萬華的阿香麵攤提供了舊碗與湯頭的配方。','A-Hsiang Noodle Stall in Wanhua provided the old bowls and the broth recipe.'],
+   desc:[['卡蜜兒．胡用麵攤的舊碗翻模燒出十二只新碗，碗緣保留了舊碗的缺口。展期間每天中午十二點，她在展場用攤子教她的配方煮一鍋麵，分給前十二位觀眾。'],
+         ['Camille Roux cast twelve new bowls from the stall\'s old ones, keeping the chips on the rims. Every day at noon she cooks a pot of noodles in the gallery, following the stall\'s recipe, and serves the first twelve visitors.']]},
+  {id:'W09', title:['三個晚上','Three Nights'], artists:['A07'], imgs:3, video:true,
+   meta:['單頻道錄像、彩色、有聲｜18 分鐘｜展場','Single-channel video, colour, sound | 18 min | gallery'],
+   desc:[['三段各六分鐘的跟拍：三位外送員從晚上七點到凌晨一點的路線。沒有旁白，只有引擎聲、導航語音與偶爾的對話。',
+          '影片可以在本頁直接播放。'],
+         ['Three six-minute segments, each following a delivery rider from seven in the evening to one in the morning. No narration; only the engine, the navigation voice and the occasional exchange.',
+          'The film can be played on this page.']]},
+  {id:'W10', title:['窗','Window'], artists:['A08'], imgs:3, video:true,
+   meta:['手繪逐格動畫、彩色、有聲｜12 分鐘｜展場','Hand-drawn animation, colour, sound | 12 min | gallery'],
+   desc:[['九十天，每天一張：雷耶斯住處窗外的那棟公寓、晾衣竿、對面的早餐店。九十張畫接成十二分鐘，看得到季節從冬天走到初夏。'],
+         ['Ninety days, one drawing a day: the apartment block outside Reyes\'s window, the laundry poles, the breakfast shop across the street. Ninety drawings make twelve minutes, in which the season moves from winter to early summer.']]},
+];
+
+const SITE = {
+  t1:'臺北資料夾', t2:'File in Taipei 2026',
+  dates:['駐地創作 2026.3.2 – 5.29｜成果展 2026.6.5 – 6.28','Residency 2 Mar – 29 May 2026 | Exhibition 5 – 28 Jun 2026'],
+  intro:['「臺北資料夾」是臺北市政府青年局的國內外青年藝術家交流計畫。2026 年春天，8 位來自臺灣、日本、韓國、德國、泰國、法國、奈及利亞與菲律賓的青年藝術家在臺北駐地創作三個月，把這座城市當成一個資料夾，各自放進一件或幾件作品。這個網站收錄 8 位藝術家與 10 件作品。',
+         'File in Taipei is an exchange program for young artists from Taiwan and abroad, run by Taipei City Government. In spring 2026, eight artists from Taiwan, Japan, Korea, Germany, Thailand, France, Nigeria and the Philippines spent three months in Taipei, treating the city as a folder and filing one or more works into it. This site presents the eight artists and ten works.'],
+  secArtists:['② 藝術家','Artists'], secWorks:['③ 作品','Works'],
+  face:'大頭貼', cover:'作品封面', videoShort:'影片',
+  bio:['基本介紹','About'], links:['外部連結','Links'], newtab:'新分頁 new tab',
+  thisWorks:['本次作品','Works in this program'],
+  video:['影片，點了直接播放','Video, plays on click'],
+  img:'作品圖', byArtists:['創作藝術家','Artists'], desc:['詳細介紹','About the work'],
+  meta:['媒材／尺寸／地點','Medium / Size / Location'], thanks:['感謝名單','Acknowledgements'],
+  footer:[
+    ['主辦單位：臺北市政府青年局','Organizer: Taipei City Government'],
+    ['承辦單位：藝高文創股份有限公司','Implementer: 藝高文創股份有限公司'],
+    ['臺北資料夾 File in Taipei 2026',''],
+    ['© 2026 臺北市政府青年局','All rights reserved.'],
+    ['聯絡信箱：info@fileintaipei.tw','Contact: info@fileintaipei.tw'],
+  ],
+};
+const bi = p => `${p[0]}<span class="en">${p[1]}</span>`;            /* 同一行：中文 英文 */
+const biH = (tag, p) => `<${tag}>${p[0]}<span class="en">${p[1]}</span></${tag}>`;
+const paras = (arr, cls) => arr.map(s => `<p${cls ? ' class="' + cls + '"' : ''}>${s}</p>`).join('');
+
+/* ===== 路由：#/home、#/artists/A01、#/works/W01 ===== */
+const state = {path: ''};
+function hashPath(){ return location.hash.replace(/^#/, ''); }
+function parse(){
+  let h = state.path;
+  if(!h) h = '/home';
+  const p = h.split('/').filter(Boolean);
+  const type = p[0] || 'home';
+  const id = p[1] || '';
+  return {type, id, path:'/' + [type, id].filter(Boolean).join('/')};
+}
+function go(path){
+  state.path = path;
+  try{ location.hash = path; }catch(e){}
+  if(hashPath() !== path) render();   /* 網址列不能帶 # 的環境（例如 data: 開啟）就直接換畫面 */
+}
+let pendingScroll = null;
+function menuTo(sec){
+  const r = parse();
+  closeNav();
+  if(r.type === 'home'){ scrollToSec(sec); }
+  else { pendingScroll = sec; go('/home'); }
+}
+function scrollToSec(sec){
+  const el = document.getElementById(sec);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function closeNav(){ document.getElementById('nav').classList.remove('open'); setBurger(); }
+function setBurger(){ document.getElementById('burger').textContent = document.getElementById('nav').classList.contains('open') ? '關閉 Close' : '選單 Menu'; }
+
+/* ===== 畫面 ===== */
+function worksOf(aid){ return WORKS.filter(w => w.artists.includes(aid)); }
+function artist(id){ return ARTISTS.find(a => a.id === id); }
+function workById(id){ return WORKS.find(w => w.id === id); }
+
+function renderMenu(r){
+  document.getElementById('logo').onclick = () => { closeNav(); if(r.type === 'home'){ window.scrollTo({top:0, behavior:'smooth'}); } else { go('/home'); } };
+  document.getElementById('navArtists').onclick = () => menuTo('artists');
+  document.getElementById('navWorks').onclick = () => menuTo('works');
+  document.getElementById('burger').onclick = () => { document.getElementById('nav').classList.toggle('open'); setBurger(); };
+  document.getElementById('url').textContent = r.path;
+}
+
+function artistCard(a){
+  return `<div class="card" onclick="go('/artists/${a.id}')">
+    <div class="tab">${a.id}</div>
+    <div class="body">
+      <div class="block ph-face">${SITE.face}<br>${a.id}</div>
+      <div class="cap"><b>${a.name}</b><span class="muted">${a.nat[0]} ${a.nat[1]}</span></div>
+    </div></div>`;
+}
+function workCard(w){
+  const cls = w.video ? 'ph-cover ph-video' : 'ph-cover';
+  return `<div class="card" onclick="go('/works/${w.id}')">
+    <div class="tab">${w.id}</div>
+    <div class="body">
+      <div class="block ${cls}">${w.video ? SITE.videoShort : SITE.cover}<br>${w.id}</div>
+      <div class="cap"><b>${w.title[0]}</b><span class="en">${w.title[1]}</span></div>
+    </div></div>`;
+}
+
+function renderHome(){
+  return `
+  <section id="top">
+    <div class="hero">
+      <p class="t1">${SITE.t1}</p>
+      <p class="t2">${SITE.t2}</p>
+      <p>${SITE.dates[0]}<br><span class="en">${SITE.dates[1]}</span></p>
+      <p>${SITE.intro[0]}</p><p class="en">${SITE.intro[1]}</p>
+    </div>
+  </section>
+  <section id="artists">
+    <div class="sec-artists">
+      ${biH('h2', SITE.secArtists)}
+      <div class="grid">${ARTISTS.map(artistCard).join('')}</div>
+    </div>
+  </section>
+  <section id="works">
+    <div class="sec-works">
+      ${biH('h2', SITE.secWorks)}
+      <div class="grid works">${WORKS.map(workCard).join('')}</div>
+    </div>
+  </section>
+  <section id="footer">
+    <div class="footer">
+      ${SITE.footer.map(p => `<div>${p[0]}${p[1] ? ' <span class="en">' + p[1] + '</span>' : ''}</div>`).join('')}
+    </div>
+  </section>`;
+}
+
+function renderArtist(r){
+  const a = artist(r.id);
+  if(!a) return `<section><p>${r.id} not found</p></section>`;
+  const links = a.links.map(l => `<a href="${l[1]}" target="_blank" rel="noopener">${l[0]} ↗ <span class="muted">${SITE.newtab}</span></a>`).join('');
+  const ws = worksOf(a.id);
+  return `
+  <section>
+    <div class="head artist">
+      <div class="block ph-face face">${SITE.face}<br>${a.id}</div>
+      <div>
+        <p class="name">${a.name}<small>${a.nameZh}｜${a.nat[0]} ${a.nat[1]}</small></p>
+        ${biH('h3', SITE.bio)}${paras(a.bio[0])}${paras(a.bio[1], 'en')}
+        ${biH('h3', SITE.links)}<div class="links">${links}</div>
+      </div>
+    </div>
+  </section>
+  ${a.video ? `<section><div class="block ph-video" style="aspect-ratio:16/9;border-radius:12px;font-size:18px;flex-direction:column">▶ ${worksOf(a.id).find(w => w.video).title[0]}<br><span style="font-size:14px;color:#CCC">${SITE.video[0]} ${SITE.video[1]}</span></div></section>` : ''}
+  <section>
+    <h2>${SITE.thisWorks[0]}（${ws.length}）<span class="en">${SITE.thisWorks[1]}</span></h2>
+    <div class="grid works">${ws.map(workCard).join('')}</div>
+  </section>`;
+}
+
+function renderWork(r){
+  const w = workById(r.id);
+  if(!w) return `<section><p>${r.id} not found</p></section>`;
+  const chips = w.artists.map(id => `<a onclick="go('/artists/${id}')">${artist(id).name}</a>`).join('');
+  const thumbs = Array.from({length:w.imgs}, (_, i) => `<div class="block ph-cover${i===0?' on':''}" data-i="${i+1}">${SITE.img} ${i+1}</div>`).join('');
+  const mainCls = w.video ? 'block ph-video main' : 'block ph-cover main';
+  const mainTxt = w.video ? `▶ ${w.title[0]}　${SITE.video[0]}` : `${SITE.img} 1 / ${w.imgs}`;
+  const thanks = w.thanks ? `<dt>${bi(SITE.thanks)}</dt><dd>${w.thanks[0]}<br><span class="en">${w.thanks[1]}</span></dd>` : '';
+  return `
+  <section>
+    <div class="head work" style="display:block">
+      <div class="gallery">
+        <div class="${mainCls}" id="mainImg" data-n="${w.imgs}">${mainTxt}</div>
+        <div class="thumbs" id="thumbs">${thumbs}</div>
+      </div>
+      <div class="work-body">
+        <div>
+          <p class="name">${w.title[0]}<small>${w.title[1]}</small></p>
+          ${biH('h3', SITE.byArtists)}<div class="chips">${chips}</div>
+          ${biH('h3', SITE.desc)}${paras(w.desc[0])}${paras(w.desc[1], 'en')}
+        </div>
+        <dl>
+          <dt>${bi(SITE.meta)}</dt><dd>${w.meta[0]}<br><span class="en">${w.meta[1]}</span></dd>
+          ${thanks}
+        </dl>
+      </div>
+    </div>
+  </section>`;
+}
+
+let lastPath = null;
+function render(){
+  const r = parse();
+  renderMenu(r);
+  const app = document.getElementById('app');
+  if(r.type === 'artists') app.innerHTML = renderArtist(r);
+  else if(r.type === 'works') app.innerHTML = renderWork(r);
+  else app.innerHTML = renderHome();
+  const base = '臺北資料夾 File in Taipei';
+  document.title = r.type === 'artists' ? ((artist(r.id)||{}).name || r.id) + ' | ' + base
+                 : r.type === 'works' ? ((workById(r.id)||{title:[r.id]}).title[0]) + ' | ' + base
+                 : base;
+  const pageChanged = lastPath === null || lastPath !== r.path;
+  lastPath = r.path;
+  if(pendingScroll){ const s = pendingScroll; pendingScroll = null; setTimeout(() => scrollToSec(s), 50); }
+  else if(pageChanged){ window.scrollTo({top:0}); }
+  const th = document.getElementById('thumbs');
+  if(th){
+    th.addEventListener('click', e => {
+      const b = e.target.closest('[data-i]'); if(!b) return;
+      th.querySelectorAll('.block').forEach(x => x.classList.remove('on')); b.classList.add('on');
+      const m = document.getElementById('mainImg');
+      m.className = 'block ph-cover main'; m.textContent = `${SITE.img} ${b.dataset.i} / ${m.dataset.n}`;
+    });
+  }
+}
+window.addEventListener('hashchange', () => { state.path = hashPath() || '/home'; render(); });
+state.path = hashPath() || '/home';
+render();
+</script>
+<!--mv-pagecount v1-->
+<script>(function(){try{var K="mv_device_id",i=localStorage.getItem(K);if(!i){i=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2);localStorage.setItem(K,i);}var u="https://mv-count.tatujinx.workers.dev/hit?p=FIT2026-PROTO&d="+encodeURIComponent(i);if(navigator.sendBeacon){navigator.sendBeacon(u);}else{fetch(u,{mode:"no-cors",keepalive:true});}}catch(e){}})();</script>
+</body>
+</html>
