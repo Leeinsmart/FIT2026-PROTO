@@ -26,8 +26,6 @@ a:hover{color:var(--mag)}
   .nav.open{display:flex;flex-direction:column;align-items:flex-start;position:absolute;left:0;right:0;top:56px;background:#fff;border-bottom:2px solid var(--navy);padding:12px 16px 16px;gap:14px}
   .burger{display:block}
 }
-.urlbar{background:#EFEBE0;color:#555;font-size:12px;padding:3px 16px;font-family:Menlo,monospace}
-.urlbar span{color:#999;margin-right:8px;font-family:inherit}
 
 .wrap{max-width:1100px;margin:0 auto;padding:16px}
 section{padding:28px 0;scroll-margin-top:64px}
@@ -104,7 +102,6 @@ dd{margin:0}
     </div>
   </div>
 </div>
-<div class="urlbar"><span>網址</span><code id="url"></code></div>
 
 <div id="app" class="wrap"></div>
 
@@ -299,7 +296,6 @@ function renderMenu(r){
   document.getElementById('navArtists').onclick = () => menuTo('artists');
   document.getElementById('navWorks').onclick = () => menuTo('works');
   document.getElementById('burger').onclick = () => { document.getElementById('nav').classList.toggle('open'); setBurger(); };
-  document.getElementById('url').textContent = r.path;
 }
 
 function artistCard(a){
