@@ -106,153 +106,635 @@ dd{margin:0}
 <div id="app" class="wrap"></div>
 
 <script>
-/* ===== 示意資料：人名、作品與文字都是為了看版型擬的，不是真實資料 ===== */
+/* @@DATA-BEGIN 由 tools/apply_content.py 從 素材/File_in_Taipei_網站內容資料_給設計師.xlsx 產生，不要手改 */
+const PROGRAM = {
+ "title": [
+  "臺北資料夾",
+  "File in Taipei 2026"
+ ],
+ "fullName": [
+  "臺北市國內外青年藝術家交流計畫 — 《臺北資料夾 | File in Taipei 2026》",
+  "The International Young Artist Residency Program - File in Taipei 2026"
+ ],
+ "dates": [
+  "2026.07.01-09.30",
+  "2026.07.01-09.30"
+ ],
+ "intro": null,
+ "menu": [
+  [
+   "藝術家",
+   "Artists"
+  ],
+  [
+   "作品",
+   "Works"
+  ]
+ ],
+ "secArtists": [
+  "藝術家",
+  "Artists"
+ ],
+ "secWorks": [
+  "作品",
+  "Works"
+ ],
+ "footer": [
+  [
+   "主辦單位：臺北市政府青年局",
+   "Organized by: Department for Youth, Taipei City Government"
+  ],
+  [
+   "執行單位：藝高文創股份有限公司",
+   "Implemented by: IEGO ART Inc."
+  ],
+  [
+   "臺北市國內外青年藝術家交流計畫",
+   "The International Young Artist Residency Program - File in Taipei 2026"
+  ],
+  [
+   "© 2026 臺北市政府青年局　版權所有　／　All rights reserved.",
+   ""
+  ],
+  [
+   "聯絡信箱：iegoart.taipeifile2026@gmail.com",
+   "Contact: iegoart.taipeifile2026@gmail.com"
+  ]
+ ]
+};
 const ARTISTS = [
-  {id:'A01', name:'Mira Chen', nameZh:'陳以安', nat:['臺灣','Taiwan'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
-   bio:[[
-     '陳以安 1996 年生於臺北，目前在臺北與東京兩地工作。她以錄像與織品為主要媒材，關注城市裡被忽略的日常物件：路邊的塑膠椅、店家的手寫招牌、臨時搭起來的棚架。',
-     '近年作品圍繞「臨時」這個主題：這些東西不是為了長久存在而被製造，卻在街上停留了幾十年。她把它們拆開、重新織過，再放回原本的位置，讓路人重新看見。',
-     '曾參與臺北與東京多個替代空間的聯展，2025 年在大阪駐村三個月。'
-   ],[
-     'Mira Chen (b. 1996, Taipei) works between Taipei and Tokyo. Her practice combines video and textiles and looks at the everyday objects a city stops noticing: roadside plastic stools, hand-painted shop signs, makeshift canopies.',
-     'Recent works circle around the idea of the temporary: things made without any intention of lasting, yet still standing on the street decades later. She takes them apart, re-weaves them and puts them back where they were, so that passers-by see them again.',
-     'She has shown in artist-run spaces in Taipei and Tokyo and spent three months on a residency in Osaka in 2025.'
-   ]]},
-  {id:'A02', name:'Kenji Arai', nameZh:'新井健司', nat:['日本','Japan'], links:[['Instagram','https://example.com/']],
-   bio:[[
-     '新井健司是來自大阪的版畫家，擅長用木刻記錄市場與港口的勞動場景。在臺北的兩個月裡，他每天清晨五點到批發市場畫速寫，回到工作室再刻成版畫。'
-   ],[
-     'Kenji Arai is a printmaker from Osaka who records the labour of markets and harbours in woodcut. During his two months in Taipei he sketched at a wholesale market from five every morning and carved the scenes into prints back in the studio.'
-   ]]},
-  {id:'A03', name:'Sora Park', nameZh:'朴素拉', nat:['韓國','Korea'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
-   bio:[[
-     '朴素拉 1994 年生於釜山，創作以聲音裝置為主。她收集城市裡的機械聲響：捷運關門的提示音、冷氣室外機、夜市的叫賣，再把它們編成可以坐在裡面聽的小房間。',
-     '這次駐地期間，她在大稻埕錄下三十多個小時的環境音，整理成作品《聽見一條街》，並與布蘭特合作了《騎樓客廳》的聲音部分。'
-   ],[
-     'Sora Park (b. 1994, Busan) makes sound installations. She collects the mechanical sounds of a city, metro door chimes, air-conditioner units, night-market calls, and composes them into small rooms you can sit inside and listen to.',
-     'During the residency she recorded over thirty hours of ambient sound in Dadaocheng, which became Hearing a Street, and made the sound for Arcade Living Room with Lukas Brandt.'
-   ]]},
-  {id:'A04', name:'Lukas Brandt', nameZh:'盧卡斯．布蘭特', nat:['德國','Germany'], links:[['作品網頁 Website','https://example.com/']],
-   bio:[[
-     '盧卡斯．布蘭特 1992 年生於萊比錫，建築背景出身的裝置藝術家。他的作品常以木構與帆布搭出可以走進去的臨時空間，探討城市裡「誰可以使用哪一塊地」的問題。',
-     '在萊比錫，他曾與社區合作，把一塊閒置停車場改成為期一個夏天的露天客廳；在臺北，他把同樣的方法帶到一條巷子的騎樓。',
-     '他說臺北的騎樓是他見過最有趣的公共空間：既是私人店面的延伸，又是所有人都能走的路。這次的作品《騎樓客廳》就是從這個觀察出發。',
-     '作品拆除後，所有木料都送給了附近的木工行。'
-   ],[
-     'Lukas Brandt (b. 1992, Leipzig) is an installation artist trained in architecture. He builds walk-in temporary spaces out of timber and canvas, asking who gets to use which piece of a city.',
-     'In Leipzig he worked with a neighbourhood to turn an unused car park into an open-air living room for one summer; in Taipei he brought the same method to the arcade of a single lane.',
-     'He calls Taipei\'s arcades the most interesting public space he has seen: an extension of private shopfronts that everyone is allowed to walk through. Arcade Living Room grew out of this observation.',
-     'When the piece came down, all the timber went to a carpenter\'s workshop nearby.'
-   ]]},
-  {id:'A05', name:'Nalin Suksawat', nameZh:'娜琳．素薩瓦', nat:['泰國','Thailand'], links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
-   bio:[[
-     '娜琳．素薩瓦來自清邁，以攝影與手工書創作。她在臺北拍攝了八十位在便利商店上夜班的人，做成一本可以翻閱的作品《夜班》。'
-   ],[
-     'Nalin Suksawat, from Chiang Mai, works in photography and handmade books. In Taipei she photographed eighty people working night shifts in convenience stores and bound them into a book you can leaf through, Night Shift.'
-   ]]},
-  {id:'A06', name:'Camille Roux', nameZh:'卡蜜兒．胡', nat:['法國','France'], links:[['Instagram','https://example.com/']],
-   bio:[[
-     '卡蜜兒．胡 1995 年生於里昂，創作以陶與食物為核心。她常在展場裡煮東西，讓觀眾一邊吃一邊看作品。',
-     '這次她和萬華的一間老麵攤合作，用攤子用了三十年的舊碗翻模，做出一組新碗，展期間每天中午在展場煮一鍋麵。'
-   ],[
-     'Camille Roux (b. 1995, Lyon) works with ceramics and food. She often cooks in the exhibition space so that visitors eat while they look.',
-     'For this project she worked with an old noodle stall in Wanhua, casting a new set of bowls from the ones the stall has used for thirty years, and cooked a pot of noodles in the gallery every day at noon.'
-   ]]},
-  {id:'A07', name:'Daniel Okafor', nameZh:'丹尼爾．歐卡佛', nat:['奈及利亞','Nigeria'], video:true, links:[['Instagram','https://example.com/'],['作品網頁 Website','https://example.com/']],
-   bio:[[
-     '丹尼爾．歐卡佛 1993 年生於拉哥斯，影像創作者。他的作品多為單頻道錄像，長度在十到二十分鐘之間，拍的是城市裡的移動：摩托車、公車、外送員。',
-     '在臺北，他跟拍了三位外送員各一個晚上，剪成作品《三個晚上》。'
-   ],[
-     'Daniel Okafor (b. 1993, Lagos) is a video artist. His single-channel works, ten to twenty minutes long, follow movement through cities: scooters, buses, delivery riders.',
-     'In Taipei he followed three delivery riders for one night each and edited the footage into Three Nights.'
-   ]]},
-  {id:'A08', name:'Ana Reyes', nameZh:'安娜．雷耶斯', nat:['菲律賓','Philippines'], video:true, links:[['Instagram','https://example.com/']],
-   bio:[[
-     '安娜．雷耶斯是來自馬尼拉的動畫導演。她用手繪逐格動畫記錄自己在臺北住的那間公寓窗外每天的變化，完成十二分鐘的作品《窗》。'
-   ],[
-     'Ana Reyes is an animator from Manila. She drew the view from her Taipei apartment window frame by frame, day after day, and turned the drawings into the twelve-minute film Window.'
-   ]]},
+ {
+  "id": "A01",
+  "name": "madkidgenius",
+  "born": "1991",
+  "nat": [
+   "美國 加州",
+   "Based in California, USA"
+  ],
+  "bio": [
+   [
+    "Aaron，亦以藝術分身「madkidgenius」為人所知，是一位具第三文化背景的臺裔美籍創作者，往返於聖荷西、洛杉磯與臺灣之間工作。身為跨領域創意策略師，他身兼多重角色，專業橫跨品牌設計、動態設計、3D 設計、插畫與行銷文宣。自 2013 年起，Aaron 協助眾多品牌打造鮮明的設計系統與出色的數位行銷活動，合作對象包括 Apple、Walmart Connect、Khalabo Ink Society，以及 Snoop Dogg 家族旗下事業。",
+    "在為大型品牌操刀設計的同時，Aaron 始終希望回到自己最初的熱情：純藝術與插畫。他的個人創作色彩明亮、能量飽滿，融合東西方流行文化，畫面中充滿卡通感的角色，帶有網路世代的玩心，也處處可見用心經營的細節。他喜歡在數位與實體媒材之間來回穿梭，探索現代日常生活中的種種樂趣。",
+    "創作之餘，他熱愛旅行與潛水，喜歡打籃球和匹克球，也愛逛美術館、打電動，並收藏古著與球鞋。"
+   ],
+   [
+    "Also known by his artistic alter-ego madkidgenius, Aaron is a third-culture Taiwanese-American creative working between San Jose, Los Angeles, and Taiwan. As a multi-disciplinary creative strategist, he wears many hats, spanning branding, motion graphics, 3D design, illustration, and marketing collateral. Since 2013, Aaron has helped brands craft distinct design systems and standout digital campaigns, including work with Apple, Walmart Connect, Khalabo Ink Society, and Snoop Dogg’s family businesses.",
+    "While designing for major ventures, Aaron wanted to loop back to his core passion: fine art and illustration. His personal work is a bright, high-energy mix of Eastern and Western pop culture, packed with cartoony characters and a playful, internet-born edge and intentional detail. He loves bouncing between digital and physical mediums to explore the fun inside everyday modern life. When not making things, he enjoys traveling, scuba diving, sports like basketball and pickleball, museum hopping, video gaming, and collecting vintage clothing or sneakers."
+   ]
+  ],
+  "links": [
+   [
+    "個人網站 Website",
+    "https://madkidgenius.design/"
+   ],
+   [
+    "Instagram",
+    "https://www.instagram.com/madkidgenius"
+   ]
+  ]
+ },
+ {
+  "id": "A02",
+  "name": "jasmot",
+  "born": "1988",
+  "nat": [
+   "菲律賓",
+   "Philippines"
+  ],
+  "bio": [
+   [
+    "Jenny Jasmin Lacay，又名 Jasmot，是一位跨領域藝術家，身兼插畫家、壁畫藝術家、肖像畫家與藝術教育工作者。她以優等成績畢業於 University of the East，並取得 Philippine Women's University 藝術與設計碩士學位。她的創作聚焦於日常生活與真實的人性經驗，並致力讓藝術走入大眾。她曾與 Jordan、UNIQLO、嬌蘭（Guerlain）、蘭蔻（Lancôme）等知名品牌合作，壁畫作品多分布於菲律賓達義市的 Bonifacio Global City（BGC）。除了藝術創作，她也在高中教授視覺藝術課程，透過藝術與教育啟發學生的創造力。"
+   ],
+   [
+    "Jenny Jasmin Lacay also known as Jasmot is a multidisciplinary artist, illustrator, mural artist, portrait artist, and an art educator. A cum laude graduate of the University of the East, she holds a master’s degree in Arts and Design from the Philippine Women’s University. Her artistic practice explores everyday life and authentic human experiences, with a strong commitment to making art accessible to the public. She has collaborated with renowned brands such as Jordan, Uniqlo, Guerlain, and Lancôme, with most of her murals located in Bonifacio Global City (BGC), Taguig. Alongside her artistic practice, she teaches Visual Arts to Senior High School students, inspiring creativity through both art and education."
+   ]
+  ],
+  "links": [
+   [
+    "Instagram",
+    "https://www.instagram.com/jasmot/"
+   ]
+  ]
+ },
+ {
+  "id": "A03",
+  "name": "shiroooo11",
+  "born": "2001",
+  "nat": [
+   "馬來西亞 柔佛",
+   "Based in Johor, Malaysia"
+  ],
+  "bio": [
+   [
+    "拾壹 shiroooo11，出生於台灣彰化，成長於馬來西亞柔佛，畢業於國立臺灣藝術大學，現主要於台灣從事創作。",
+    "創作媒材以陶塑與插畫為主，作品風格受到自幼接觸的漫畫文化影響，呈現簡潔、可愛的視覺語言。喜歡嘗試跳脫傳統框架的創作形式，探索不同媒材與表現方式的可能性。"
+   ],
+   [
+    "Shiroooo11(拾壹) was born in Changhua, Taiwan, and grew up in Johor, Malaysia. After graduating from the National Taiwan University of Arts, Shiroooo11 is now mainly based in Taiwan, where the artistic practice continues.",
+    "Working mainly with ceramic sculpture and illustration, shiroooo11 draws inspiration from a childhood surrounded by manga. The works have a simple and playful style. Shiroooo11 enjoys exploring new ways of making art, trying different materials, and creating works that go beyond traditional forms."
+   ]
+  ],
+  "links": [
+   [
+    "Instagram",
+    "https://www.instagram.com/shiroooo11/"
+   ]
+  ]
+ },
+ {
+  "id": "A04",
+  "name": "Koctel",
+  "born": "1989",
+  "nat": [
+   "西班牙 馬德里",
+   "Based in Madrid, Spain"
+  ],
+  "bio": [
+   [
+    "藝術家Koctel出生於西班牙的格拉納達，成長於塞維亞。自幼熱愛繪畫與塗鴉，而塞維亞隨處可見的橘子樹，成為他創作的重要靈感來源。他的風格鮮明亮眼，融合塗鴉、插畫與街頭藝術，並以橘子作為個人標誌。他在塗鴉中找到兼具紀律與創作自由的天地，並在各城市牆面上留下的作品，也見證了其藝術風格的演變歷程。"
+   ],
+   [
+    "Koctel is a Spanish artist born in Granada and raised in Seville, where the city’s iconic orange trees became a central source of inspiration. His vibrant style fuses graffiti, illustration, and urban art, with the orange serving as a personal emblem. Drawn to drawing and graffiti from an early age, he found in the latter a space of rigor and creative freedom, and the facades of the cities he painted bear witness to his artistic evolution."
+   ]
+  ],
+  "links": [
+   [
+    "個人網站 Website",
+    "https://www.koctelkahoolawe.com"
+   ],
+   [
+    "Instagram",
+    "https://www.instagram.com/koct3l"
+   ]
+  ]
+ },
+ {
+  "id": "A05",
+  "name": "Juan",
+  "born": null,
+  "nat": null,
+  "bio": [
+   [],
+   []
+  ],
+  "links": []
+ },
+ {
+  "id": "A06",
+  "name": "Omer Lotan",
+  "born": "1985",
+  "nat": [
+   "洛杉磯",
+   "Based in Los Angeles"
+  ],
+  "bio": [
+   [
+    "Omer Lotan 是一位攝影指導暨電影工作者，來自以色列特拉維夫，現居洛杉磯。他的作品橫跨劇情片、紀錄片與廣告，曾於坎城影展、Camerimage 影展及 Slamdance 影展等國際影展放映。商業合作客戶包括 Wix、Visa 與 Soundcore。他是 Film Independent「Project Involve」計畫的 2025 年度學員，並參與美國電影攝影師協會的 ASC Vision Mentorship Program。"
+   ],
+   [
+    "Omer Lotan is a cinematographer and filmmaker originally from Tel Aviv, now based in Los Angeles. His work spans narrative film, documentary, and commercials, and has screened at Cannes, Camerimage, and Slamdance, among other festivals. His commercial clients include Wix, Visa, and Soundcore. He is a 2025 Film Independent Project Involve Fellow and a participant in the ASC Vision Mentorship Program."
+   ]
+  ],
+  "links": [
+   [
+    "個人網站 Website",
+    "https://omerlotan.com"
+   ],
+   [
+    "Instagram",
+    "https://www.instagram.com/omerlotan"
+   ]
+  ]
+ },
+ {
+  "id": "A07",
+  "name": "Ana",
+  "born": null,
+  "nat": null,
+  "bio": [
+   [],
+   []
+  ],
+  "links": []
+ },
+ {
+  "id": "A08",
+  "name": "Théa Macera",
+  "born": "1997",
+  "nat": [
+   "法國 里昂",
+   "Based in Lyon, France"
+  ],
+  "bio": [
+   [
+    "Théa Macera 是一位現居里昂的法國藝術家，以紙為媒材，探索身體、土地與植物形態之間的關係。",
+    "自 2022 年起，她的創作以手工紙為核心，並從不同情境中觀察到的植物汲取靈感，創作出各式植物形態。她的作品探討自然與人造之間的張力：紙源自生命物質，卻歷經轉化而成，她便以紙作為轉譯與虛構的工具。除了藝術創作，她也透過工作坊推動教育計畫，帶領參與者認識紙的多元形式與技法，進一步探索紙在創作與雕塑上的潛能。"
+   ],
+   [
+    "Théa Macera is a french artist based in Lyon whose work explores the relationships between body, territory, and vegetal forms through paper.",
+    "Since 2022, she has developed a practice centered on handmade paper and the creation of botanical forms inspired by flora observed in various contexts. Her work investigates the tension between the natural and the artificial, using paper, a material derived from living matter yet transformed, as a tool for translation and fiction. Alongside her artistic practice, she develops educational projects through workshops, exploring paper in its diverse forms and techniques, and inviting participants to engage with its creative and sculptural potential."
+   ]
+  ],
+  "links": [
+   [
+    "Instagram",
+    "https://www.instagram.com/theamacera/"
+   ]
+  ]
+ }
 ];
-
-/* 作品 × 藝術家對應表：一件作品可多位，一位可多件 */
 const WORKS = [
-  {id:'W01', title:['臨時的椅子','Temporary Chairs'], artists:['A01'], imgs:4,
-   meta:['織品、錄像｜尺寸依場地｜迪化街某騎樓','Textile, video | dimensions variable | an arcade on Dihua Street'],
-   thanks:['迪化街的三間店家借出了他們的椅子。','Three shops on Dihua Street lent their chairs.'],
-   desc:[['陳以安向迪化街的店家借來十二張放在門口的塑膠椅，把椅面拆下來，用同色的尼龍繩重新編織，再放回原位。展期間椅子照常被店家和路人使用。',
-          '旁邊的螢幕播放一支八分鐘的錄像，記錄椅子被借走與送回的過程。'],
-         ['Mira Chen borrowed twelve plastic stools that shops on Dihua Street keep by their doors, removed the seats, re-wove them in nylon cord of the same colour and put them back. Throughout the exhibition the stools stayed in use by shopkeepers and passers-by.',
-          'A screen beside them plays an eight-minute video of the stools being borrowed and returned.']]},
-  {id:'W02', title:['招牌','Signs'], artists:['A01','A02'], imgs:3,
-   meta:['木刻版畫印於棉布｜60 × 90 cm，共 6 件｜展場','Woodcut on cotton | 60 × 90 cm, set of 6 | gallery'],
-   desc:[['新井健司刻了六塊臺北老店手寫招牌的木版，陳以安把它們印在棉布上，再縫成可以掛在騎樓下的布幔。字是店家的字，布是市場買的布。'],
-         ['Kenji Arai carved six woodblocks after hand-painted signs of old Taipei shops; Mira Chen printed them on cotton and sewed the cloth into banners that hang under an arcade. The lettering belongs to the shops, the cloth came from the market.']]},
-  {id:'W03', title:['市場，清晨五點','Market, 5 a.m.'], artists:['A01','A02'], imgs:5,
-   meta:['木刻版畫、織品｜各 40 × 55 cm，共 12 幅｜展場','Woodcut, textile | 40 × 55 cm each, 12 prints | gallery'],
-   desc:[['十二幅版畫記錄批發市場從卸貨到收攤的一個早上。新井健司負責速寫與刻版，陳以安把其中四幅改印在回收的米袋上。'],
-         ['Twelve prints follow one morning at a wholesale market, from unloading to closing. Kenji Arai sketched and carved; Mira Chen printed four of them on recycled rice sacks.']]},
-  {id:'W04', title:['聽見一條街','Hearing a Street'], artists:['A03'], imgs:3,
-   meta:['聲音裝置、木構、六聲道｜300 × 300 × 240 cm｜展場','Sound installation, timber, 6 channels | 300 × 300 × 240 cm | gallery'],
-   desc:[['一個三公尺見方的小房間，六個喇叭分別播放大稻埕一天裡六個時段的環境音：早市、午後的茶行、傍晚的廟口、夜裡的巷子。觀眾坐在裡面，用十五分鐘聽完一條街的一天。',
-          '所有聲音在 2026 年 3 月到 5 月間錄製，沒有後製加工。'],
-         ['A three-metre room with six speakers, each playing the ambient sound of one part of a day in Dadaocheng: the morning market, a tea shop in the afternoon, the temple square at dusk, a lane at night. Visitors sit inside and hear a street\'s whole day in fifteen minutes.',
-          'All sound was recorded between March and May 2026 and left unprocessed.']]},
-  {id:'W05', title:['騎樓客廳','Arcade Living Room'], artists:['A03','A04'], imgs:4,
-   meta:['木構、帆布、聲音｜依場地｜民生西路某巷騎樓','Timber, canvas, sound | site-specific | an arcade off Minsheng West Road'],
-   thanks:['巷口的五金行與里長提供了用電與夜間看顧。','The hardware shop at the corner and the neighbourhood chief provided power and kept an eye on it at night.'],
-   desc:[['布蘭特在一段二十公尺的騎樓裡，用木構與帆布搭出三組可以坐下來的「客廳」：沙發、矮桌、書架。朴素拉為每一組客廳錄了一段不同的聲音：收音機、鄰居的對話、雨。',
-          '展期四週，客廳每天開放到晚上十點，由巷子裡的店家輪流看管。'],
-         ['Along twenty metres of arcade, Lukas Brandt built three "living rooms" out of timber and canvas: sofa, low table, bookshelf. Sora Park recorded a different sound for each: a radio, neighbours talking, rain.',
-          'For four weeks the rooms stayed open until ten at night, looked after in turns by the shops in the lane.']]},
-  {id:'W06', title:['停車場的夏天','A Summer in the Car Park'], artists:['A04'], imgs:3,
-   meta:['文件、模型、照片｜模型 120 × 80 × 40 cm｜展場','Documents, model, photographs | model 120 × 80 × 40 cm | gallery'],
-   desc:[['布蘭特 2024 年在萊比錫完成的計畫紀錄：一座閒置停車場變成社區客廳的三個月。這次以模型、照片與當時的會議紀錄呈現，作為《騎樓客廳》的前傳。'],
-         ['Documentation of Brandt\'s 2024 project in Leipzig, where an unused car park became a neighbourhood living room for three months. Shown here as a model, photographs and the meeting notes of the time, a prelude to Arcade Living Room.']]},
-  {id:'W07', title:['夜班','Night Shift'], artists:['A05'], imgs:4,
-   meta:['攝影、手工書｜書 21 × 28 cm，80 頁；照片 30 × 40 cm，共 20 幅｜展場','Photography, handmade book | book 21 × 28 cm, 80 pages; prints 30 × 40 cm, 20 pieces | gallery'],
-   thanks:['感謝八十位願意在凌晨三點被拍的夜班店員。','Thanks to the eighty night-shift clerks who agreed to be photographed at three in the morning.'],
-   desc:[['素薩瓦在兩個月裡走訪臺北八十間便利商店，每一間都在凌晨三點拍下當班的店員一張肖像，並請對方寫下一句話。八十張照片與八十句話裝訂成一本書，觀眾可以戴手套翻閱。',
-          '其中二十張放大輸出掛在牆上。'],
-         ['Over two months Nalin Suksawat visited eighty convenience stores in Taipei, photographing the clerk on duty at three in the morning and asking each for one sentence. The eighty portraits and sentences are bound into a book that visitors may leaf through with gloves.',
-          'Twenty of the portraits are enlarged and hung on the wall.']]},
-  {id:'W08', title:['一碗麵','A Bowl of Noodles'], artists:['A06'], imgs:3,
-   meta:['陶、食物、行為｜碗 12 件；每日中午一場｜展場','Ceramics, food, performance | 12 bowls; one serving daily at noon | gallery'],
-   thanks:['萬華的阿香麵攤提供了舊碗與湯頭的配方。','A-Hsiang Noodle Stall in Wanhua provided the old bowls and the broth recipe.'],
-   desc:[['卡蜜兒．胡用麵攤的舊碗翻模燒出十二只新碗，碗緣保留了舊碗的缺口。展期間每天中午十二點，她在展場用攤子教她的配方煮一鍋麵，分給前十二位觀眾。'],
-         ['Camille Roux cast twelve new bowls from the stall\'s old ones, keeping the chips on the rims. Every day at noon she cooks a pot of noodles in the gallery, following the stall\'s recipe, and serves the first twelve visitors.']]},
-  {id:'W09', title:['三個晚上','Three Nights'], artists:['A07'], imgs:3, video:true,
-   meta:['單頻道錄像、彩色、有聲｜18 分鐘｜展場','Single-channel video, colour, sound | 18 min | gallery'],
-   desc:[['三段各六分鐘的跟拍：三位外送員從晚上七點到凌晨一點的路線。沒有旁白，只有引擎聲、導航語音與偶爾的對話。',
-          '影片可以在本頁直接播放。'],
-         ['Three six-minute segments, each following a delivery rider from seven in the evening to one in the morning. No narration; only the engine, the navigation voice and the occasional exchange.',
-          'The film can be played on this page.']]},
-  {id:'W10', title:['窗','Window'], artists:['A08'], imgs:3, video:true,
-   meta:['手繪逐格動畫、彩色、有聲｜12 分鐘｜展場','Hand-drawn animation, colour, sound | 12 min | gallery'],
-   desc:[['九十天，每天一張：雷耶斯住處窗外的那棟公寓、晾衣竿、對面的早餐店。九十張畫接成十二分鐘，看得到季節從冬天走到初夏。'],
-         ['Ninety days, one drawing a day: the apartment block outside Reyes\'s window, the laundry poles, the breakfast shop across the street. Ninety drawings make twelve minutes, in which the season moves from winter to early summer.']]},
+ {
+  "id": "W01",
+  "title": [
+   null,
+   "One Stop, All Together"
+  ],
+  "artists": [
+   "A01",
+   "A02",
+   "A03"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "壓克力顏料、外牆漆",
+    "Acrylic paint, exterior paint"
+   ],
+   [
+    "展出地點",
+    "Location",
+    "環南市場",
+    "Huannan Market"
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創股份有限公司、Thea Macera",
+  "desc": [
+   [],
+   [
+    "For this mural, I wanted to capture the everyday scenes of Huannan Market and highlight its unique organization as a one-stop marketplace where people can find everything they need in one place. I followed the market’s existing color-coding system to make each section easy to distinguish while creating a lively and engaging visual experience.",
+    "I was inspired by the simple routines of buying and selling and how these everyday activities connect us to food, family, and the people we care for. Through this artwork, I wanted to celebrate food as an important part of Taiwanese culture and transform ordinary market experiences into accessible public art.",
+    "The title, One Stop, All Together, also reflects our collaboration as artists from different countries, united by one goal, to share our perspectives, work together, and create an artwork that celebrates culture, community, and connection."
+   ]
+  ]
+ },
+ {
+  "id": "W02",
+  "title": [
+   "城市引擎",
+   "THE CITY'S ENGINE"
+  ],
+  "artists": [
+   "A04"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "壓克力噴漆",
+    "Acrylic spray paint"
+   ],
+   [
+    "尺寸",
+    "Dimensions",
+    "7m30 x 3m50",
+    null
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創股份有限公司、光能里辦公處、Axis Gallery",
+  "desc": [
+   [
+    "中山區赤峰街深具金屬加工與打鐵產業之歷史脈絡，其商業活動長期與金屬材料緊密結合。隨時代推移轉型為汽車零件與維修產業之集散地，現今此區呈現傳統產業與現代藝文空間並置的獨特地景，於工業底蘊中交織出當代文化的時空對話。",
+    "當地商家專精於二手零件之維修與重組，使物質在修復中重獲流通價值。此種對進口零件進行精細再生之實踐，構成作品之核心哲學：物質之循環與修復美學。在赤峰街，「修復」並非單純的功能恢復，而是一種連結過去與未來的藝術隱喻。"
+   ],
+   [
+    "Chifeng Street in the Zhongshan District possesses a profound historical context rooted in metalworking and blacksmithing industries, where commercial activities have long been inextricably linked with metallic materials. Originally serving as the core of the \"Blacksmith Street,\" the area evolved into a hub for automobile parts and repair services over time. Today, this district presents a unique landscape where traditional industries and contemporary art spaces coexist, weaving a dialogue between past and present within an industrial foundation.",
+    "Local merchants specialize in the repair and reassembly of second-hand parts, allowing materials to regain circulation value through restoration. This practice of meticulous regeneration of imported components forms the core philosophy of the work: the aesthetics of material circulation and repair. In Chifeng Street, \"repair\" is not merely functional recovery, but an artistic metaphor connecting the past and the future."
+   ]
+  ]
+ },
+ {
+  "id": "W03",
+  "title": [
+   "條通梭影",
+   "Tiaotong Flows"
+  ],
+  "artists": [
+   "A03"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "水性水泥漆",
+    "Water-based cement paint"
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創有限公司、杉木藝術有限公司、吳美瑩里長、<br>捌千代居酒屋、三條通熱情的鄰居們",
+  "desc": [
+   [
+    "一直以來，怪獸都是貫穿我作品的重要代表性符號。這次的設計中，我將一隻魚化身為花壽司怪獸，穿梭於條通商圈之間。<br>條通商圈所在區域，是台北日治時期日本人聚居與商業、飲食娛樂活動的重要街區之一。至今仍保留濃厚的日本街區氛圍，也在長期的歷史交流中，發展出台日文化交織的城市樣貌。<br>因此，在這件作品中，我選擇以台灣近代建築常見的花磚紋樣，結合日本飲食文化中具有代表性的拉麵與花壽司，作為畫面的主要視覺元素。壽司魚遊走於台式與日式生活意象之間，象徵兩種文化在日常生活中的交會、互相影響，並逐漸發展出屬於台灣的文化風景。<br>作品中的魚與麵條也承載著祝福寓意。魚象徵「年年有餘、豐衣足食」；麵條在華人與日本文化中，都有平安順遂、情誼長久的寓意。希望透過這兩個元素，表達對文化交流的祝福，也祝願這份跨文化的情誼能夠長久延續。"
+   ],
+   [
+    "Monsters have always been a recurring symbol in my work. For this mural, I transformed a fish into a flower sushi monster, swimming through the Tiaotong district.",
+    "During the Japanese colonial period, the Tiaotong district was an important area in Taipei where Japanese residents lived and engaged in commercial, dining, and entertainment activities. Today, the neighborhood retains a strong Japanese atmosphere, while its long history of cultural exchange has shaped a unique urban landscape where Taiwanese and Japanese cultures intertwine.",
+    "For this work, I combined colorful floral tiles, commonly found in Taiwan’s modern architecture, with ramen and flower sushi, iconic elements of Japanese food culture. The sushi fish travels between Taiwanese and Japanese cultural imagery, symbolizing how the two cultures meet, influence one another, and gradually shape a cultural"
+   ]
+  ]
+ },
+ {
+  "id": "W04",
+  "title": [
+   "城市⨯森林⨯美好的白日夢",
+   "Daydream in the Urban Forest"
+  ],
+  "artists": [
+   "A03"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "水性水泥漆",
+    "Water-based cement paint"
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創有限公司、杉木藝術有限公司、吳美瑩里長、<br>Razzle Dazzle 文明放縱鹽酥雞小酒館、三條通熱情的鄰居們",
+  "desc": [
+   [
+    "我覺得台北市給我的感覺就像一個被森林所包圍的現代城市。<br>繁華的同時不知為何又同時給人一種靜謐的感覺，有點魔幻、有點超現實。<br>於是我嘗試將這樣的感覺放入這幅壁畫當中，呈現一個城市森林白日夢的感覺。<br>設計作品的時候，也刻意選用了街道上出現的色彩，<br>希望它能夠更好的融入街景。"
+   ],
+   [
+    "To me, Taipei feels like a modern city surrounded by forests. Despite its bustling urban life, the city has a sense of quietness that is difficult to explain. There is something magical and almost surreal about it.",
+    "I wanted to bring this feeling into the mural, creating a kind of daydream where the city and the forest blend together.",
+    "When designing the mural, I deliberately chose colors found in the surrounding streets, hoping the artwork would blend naturally into the urban landscape."
+   ]
+  ]
+ },
+ {
+  "id": "W05",
+  "title": [
+   "士林（1）",
+   "Shilin (1)"
+  ],
+  "artists": [
+   "A07"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": null,
+  "desc": [
+   [],
+   []
+  ]
+ },
+ {
+  "id": "W06",
+  "title": [
+   null,
+   "A Flower in Taipei"
+  ],
+  "artists": [
+   "A08"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "紙材、PVC 管、紙塑、壓克力／PVC 板輸出照片",
+    "Paper, PVC tubes, papier-mâché, acrylic / Photographs printed on PVC board"
+   ],
+   [
+    "尺寸",
+    "Dimensions",
+    "1m75 / various sizes photographs",
+    null
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創股份有限公司",
+  "desc": [
+   [],
+   [
+    "This project began with the making of an oversized flower from paper and papier-mâché. Rather than remaining confined to the exhibition space, the flower was carried through the city, becoming a performative object and a pretext for social interaction.",
+    "Walking through different neighbourhoods and everyday spaces, the artist invited strangers to pose alongside the flower, encouraging spontaneous encounters and unexpected photographic situations. Participants were free to choose their poses, suggest locations or invent their own scenarios, allowing each interaction to shape the project in its own way. A bilingual sign in English and Chinese introduced the project to passers-by, inviting them to take part.",
+    "Initially apprehensive about how people would react, the artist gradually discovered an unexpected openness and generosity. Curiosity, laughter, compliments and spontaneous participation transformed the experience into a way of discovering Taipei beyond the usual perspective of a tourist. The process itself became part of the adventure, as the flower's unusual size led to improvised solutions, helpful encounters and unexpected detours throughout the city.",
+    "The resulting photographs, printed on aluminium, form a visual diary of the flower's journey and the people who briefly became part of it. More than a collection of portraits, the work documents fleeting connections and the ways an unusual object can temporarily transform relationships between strangers and their surroundings.",
+    "This project marks the beginning of an ongoing series in which a new flower will be created for each place, drawing inspiration from its local materials, visual culture and social context. Each flower will become a starting point for new encounters, allowing the work to evolve through the people and places it engages with."
+   ]
+  ]
+ },
+ {
+  "id": "W07",
+  "title": [
+   null,
+   "Taipei's ever-changing weather"
+  ],
+  "artists": [
+   "A08"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "壓克力牆面漆",
+    "Acrylic wall paint"
+   ],
+   [
+    "尺寸",
+    "Dimensions",
+    "2m30 x 2m20",
+    null
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "jasmot、shiroooo11、藝高文創股份有限公司、杉木藝術有限公司",
+  "desc": [
+   [],
+   [
+    "This mural was inspired by my encounter with Taipei during the summer, a season marked by unpredictable weather, torrential rain, typhoons and overwhelming humidity. Coming from France, I found it challenging to adapt to this tropical climate, which was so different from what I was used to.",
+    "Yet, alongside these climatic challenges, I was struck by the extraordinary presence of nature throughout the city. Lush vegetation, abundant flowers and dense forests coexist with the urban environment, creating a landscape where the city and nature seem to intertwine.",
+    "The mural depicts two rain-filled clouds, but instead of releasing water, they shower the ground with flowers. This simple transformation reflects my discovery of Taipei: what initially felt overwhelming and unfamiliar gradually became a source of fascination. The flowers represent the richness of the local flora, while the clouds evoke the unpredictable weather that shaped my first experience of the city.",
+    "The vibrant colour palette is also a tribute to Taipei’s colourful streets, creative spirit and visual energy. Rather than offering a detailed representation of the city, I chose a simple and playful image that brings together two contrasting aspects of my experience: the intensity of the tropical climate and the beauty of the surrounding vegetation.",
+    "This mural is a personal interpretation of my encounter with Taiwan. It reflects the process of adapting to an unfamiliar environment and discovering beauty in what first seems difficult"
+   ]
+  ]
+ },
+ {
+  "id": "W08",
+  "title": [
+   "條通象",
+   "Concrete Analog Memories // Elephant Slide_File 3.5"
+  ],
+  "artists": [
+   "A01"
+  ],
+  "video": false,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "戶外用壓克力漆",
+    "Exterior acrylic paint"
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "藝高文創股份有限公司、吳美瑩里長、臺北市政府工務局公園路燈工程管理處",
+  "desc": [
+   [],
+   [
+    "This mural taps straight into a heavy wave of personal nostalgia: childhood playtimes in southern Taiwan, endless school recesses, and long late-90s park afternoons. Back then, massive concrete elephant slides were everywhere. After years of living across different cultures and traveling the world, returning home to Taiwan made me realize how these iconic structures have slowly faded from the landscape, quietly drifting toward extinction.",
+    "Encountering this brutalist playground brought all those core memories rushing back. Sitting right here in Taipei’s historic Tiaotong district, a neighborhood that evolved from a Japanese-era grid inspired by a chessboard pattern into a dynamic nightlife hub, the checkered elephant felt like the perfect bridge. Across Asian traditions, the elephant stands for strength and stability, making it an awesome tribute to those classic play structures that anchored generations of kids.",
+    "Visually, I didn't want to mask or cover up the playground’s raw concrete surface. I’ve always been drawn to the unrefined, heavy weight of 50s Brutalism and béton brut. Using a mix of exterior acrylic, I blasted vibrant, high-energy colors directly onto the weathered concrete so the art and the site's natural texture could coexist.",
+    "Ultimately, this piece is my personal loop back to what started it all: a love for fine art, pop culture, and playful storytelling. It’s about taking a fading piece of local memory and dropping a bold, fresh layer onto the park, creating a fun checkpoint where older generations can reminisce and new kids can just enjoy playing."
+   ]
+  ]
+ },
+ {
+  "id": "W09",
+  "title": [
+   "線上影像",
+   "Online Video"
+  ],
+  "artists": [
+   "A05"
+  ],
+  "video": true,
+  "imgs": 0,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "影像",
+    null
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": null,
+  "desc": [
+   [],
+   []
+  ]
+ },
+ {
+  "id": "W10",
+  "title": [
+   null,
+   "Palimpsest"
+  ],
+  "artists": [
+   "A06"
+  ],
+  "video": true,
+  "imgs": 3,
+  "meta": [
+   [
+    "媒材",
+    "Medium",
+    "影像",
+    "Film"
+   ],
+   [
+    "片長",
+    "Duration",
+    "9:50 mins",
+    null
+   ],
+   [
+    "創作年份",
+    "Year",
+    "2026",
+    null
+   ]
+  ],
+  "thanks": "Actor - Vitor Lodi<br>Producer - Tz Ting Tseng<br>Composer - Lee Triffon<br>Sound Mixer - Annchee Huang",
+  "desc": [
+   [],
+   [
+    "A foreigner arrives in Taipei, finds a small folk instrument on the street, and follows it into the city’s hidden corners, layered past, and daily life, by day and deep into the night. He doesn’t find where it came from, but by dawn, he no longer needs the answer."
+   ]
+  ]
+ }
 ];
+/* @@DATA-END */
 
+/* 介面固定用字 */
 const SITE = {
-  t1:'臺北資料夾', t2:'File in Taipei 2026',
-  dates:['駐地創作 2026.3.2 – 5.29｜成果展 2026.6.5 – 6.28','Residency 2 Mar – 29 May 2026 | Exhibition 5 – 28 Jun 2026'],
-  intro:['「臺北資料夾」是臺北市政府青年局的國內外青年藝術家交流計畫。2026 年春天，8 位來自臺灣、日本、韓國、德國、泰國、法國、奈及利亞與菲律賓的青年藝術家在臺北駐地創作三個月，把這座城市當成一個資料夾，各自放進一件或幾件作品。這個網站收錄 8 位藝術家與 10 件作品。',
-         'File in Taipei is an exchange program for young artists from Taiwan and abroad, run by Taipei City Government. In spring 2026, eight artists from Taiwan, Japan, Korea, Germany, Thailand, France, Nigeria and the Philippines spent three months in Taipei, treating the city as a folder and filing one or more works into it. This site presents the eight artists and ten works.'],
-  secArtists:['② 藝術家','Artists'], secWorks:['③ 作品','Works'],
   face:'大頭貼', cover:'作品封面', videoShort:'影片',
   bio:['基本介紹','About'], links:['外部連結','Links'], newtab:'新分頁 new tab',
   thisWorks:['本次作品','Works in this program'],
   video:['影片，點了直接播放','Video, plays on click'],
   img:'作品圖', byArtists:['創作藝術家','Artists'], desc:['詳細介紹','About the work'],
-  meta:['媒材／尺寸／地點','Medium / Size / Location'], thanks:['感謝名單','Acknowledgements'],
-  footer:[
-    ['主辦單位：臺北市政府青年局','Organizer: Taipei City Government'],
-    ['承辦單位：藝高文創股份有限公司','Implementer: 藝高文創股份有限公司'],
-    ['臺北資料夾 File in Taipei 2026',''],
-    ['© 2026 臺北市政府青年局','All rights reserved.'],
-    ['聯絡信箱：info@fileintaipei.tw','Contact: info@fileintaipei.tw'],
-  ],
+  thanks:['協力與致謝','Collaborators & Thanks'],
 };
-const bi = p => `${p[0]}<span class="en">${p[1]}</span>`;            /* 同一行：中文 英文 */
+/* 中英並列；兩邊一樣只放一次，缺一邊就只放有的那邊 */
+const bil = p => !p ? '' : (p[0] && p[1] && p[1] !== p[0]) ? `${p[0]} <span class="en">${p[1]}</span>` : (p[0] || p[1] || '');
 const biH = (tag, p) => `<${tag}>${p[0]}<span class="en">${p[1]}</span></${tag}>`;
 const paras = (arr, cls) => arr.map(s => `<p${cls ? ' class="' + cls + '"' : ''}>${s}</p>`).join('');
 
@@ -292,6 +774,9 @@ function artist(id){ return ARTISTS.find(a => a.id === id); }
 function workById(id){ return WORKS.find(w => w.id === id); }
 
 function renderMenu(r){
+  document.getElementById('logo').textContent = PROGRAM.title.filter(Boolean).join(' ');
+  document.getElementById('navArtists').textContent = PROGRAM.menu[0].filter(Boolean).join(' ');
+  document.getElementById('navWorks').textContent = PROGRAM.menu[1].filter(Boolean).join(' ');
   document.getElementById('logo').onclick = () => { closeNav(); if(r.type === 'home'){ window.scrollTo({top:0, behavior:'smooth'}); } else { go('/home'); } };
   document.getElementById('navArtists').onclick = () => menuTo('artists');
   document.getElementById('navWorks').onclick = () => menuTo('works');
@@ -303,16 +788,19 @@ function artistCard(a){
     <div class="tab">${a.id}</div>
     <div class="body">
       <div class="block ph-face">${SITE.face}<br>${a.id}</div>
-      <div class="cap"><b>${a.name}</b><span class="muted">${a.nat[0]} ${a.nat[1]}</span></div>
+      <div class="cap"><b>${a.name}</b>${a.nat ? `<span class="muted">${a.nat.filter(Boolean).join(' ')}</span>` : ''}</div>
     </div></div>`;
 }
+const titleMain = w => w.title[0] || w.title[1];
+const titleSub = w => w.title[0] && w.title[1] ? w.title[1] : '';
+const videoOf = aid => worksOf(aid).find(w => w.video);
 function workCard(w){
   const cls = w.video ? 'ph-cover ph-video' : 'ph-cover';
   return `<div class="card" onclick="go('/works/${w.id}')">
     <div class="tab">${w.id}</div>
     <div class="body">
       <div class="block ${cls}">${w.video ? SITE.videoShort : SITE.cover}<br>${w.id}</div>
-      <div class="cap"><b>${w.title[0]}</b><span class="en">${w.title[1]}</span></div>
+      <div class="cap"><b>${titleMain(w)}</b>${titleSub(w) ? `<span class="en">${titleSub(w)}</span>` : ''}</div>
     </div></div>`;
 }
 
@@ -320,27 +808,28 @@ function renderHome(){
   return `
   <section id="top">
     <div class="hero">
-      <p class="t1">${SITE.t1}</p>
-      <p class="t2">${SITE.t2}</p>
-      <p>${SITE.dates[0]}<br><span class="en">${SITE.dates[1]}</span></p>
-      <p>${SITE.intro[0]}</p><p class="en">${SITE.intro[1]}</p>
+      <p class="t1">${PROGRAM.title[0]}</p>
+      <p class="t2">${PROGRAM.title[1]}</p>
+      <p>${PROGRAM.fullName[0]}<br><span class="en">${PROGRAM.fullName[1]}</span></p>
+      <p>${bil(PROGRAM.dates)}</p>
+      ${PROGRAM.intro ? paras(PROGRAM.intro[0]) + paras(PROGRAM.intro[1], 'en') : ''}
     </div>
   </section>
   <section id="artists">
     <div class="sec-artists">
-      ${biH('h2', SITE.secArtists)}
+      ${biH('h2', PROGRAM.secArtists)}
       <div class="grid">${ARTISTS.map(artistCard).join('')}</div>
     </div>
   </section>
   <section id="works">
     <div class="sec-works">
-      ${biH('h2', SITE.secWorks)}
+      ${biH('h2', PROGRAM.secWorks)}
       <div class="grid works">${WORKS.map(workCard).join('')}</div>
     </div>
   </section>
   <section id="footer">
     <div class="footer">
-      ${SITE.footer.map(p => `<div>${p[0]}${p[1] ? ' <span class="en">' + p[1] + '</span>' : ''}</div>`).join('')}
+      ${PROGRAM.footer.map(p => `<div>${p[0]}${p[1] ? ' <span class="en">' + p[1] + '</span>' : ''}</div>`).join('')}
     </div>
   </section>`;
 }
@@ -350,18 +839,21 @@ function renderArtist(r){
   if(!a) return `<section><p>${r.id} not found</p></section>`;
   const links = a.links.map(l => `<a href="${l[1]}" target="_blank" rel="noopener">${l[0]} ↗ <span class="muted">${SITE.newtab}</span></a>`).join('');
   const ws = worksOf(a.id);
+  const sub = [a.born ? `${a.born} 年生 b. ${a.born}` : '', a.nat ? a.nat.filter(Boolean).join(' ') : ''].filter(Boolean).join('｜');
+  const hasBio = a.bio[0].length || a.bio[1].length;
+  const vw = videoOf(a.id);
   return `
   <section>
     <div class="head artist">
       <div class="block ph-face face">${SITE.face}<br>${a.id}</div>
       <div>
-        <p class="name">${a.name}<small>${a.nameZh}｜${a.nat[0]} ${a.nat[1]}</small></p>
-        ${biH('h3', SITE.bio)}${paras(a.bio[0])}${paras(a.bio[1], 'en')}
-        ${biH('h3', SITE.links)}<div class="links">${links}</div>
+        <p class="name">${a.name}${sub ? `<small>${sub}</small>` : ''}</p>
+        ${hasBio ? biH('h3', SITE.bio) + paras(a.bio[0]) + paras(a.bio[1], 'en') : ''}
+        ${a.links.length ? biH('h3', SITE.links) + `<div class="links">${links}</div>` : ''}
       </div>
     </div>
   </section>
-  ${a.video ? `<section><div class="block ph-video" style="aspect-ratio:16/9;border-radius:12px;font-size:18px;flex-direction:column">▶ ${worksOf(a.id).find(w => w.video).title[0]}<br><span style="font-size:14px;color:#CCC">${SITE.video[0]} ${SITE.video[1]}</span></div></section>` : ''}
+  ${vw ? `<section><div class="block ph-video" style="aspect-ratio:16/9;border-radius:12px;font-size:18px;flex-direction:column">▶ ${titleMain(vw)}<br><span style="font-size:14px;color:#CCC">${SITE.video[0]} ${SITE.video[1]}</span></div></section>` : ''}
   <section>
     <h2>${SITE.thisWorks[0]}（${ws.length}）<span class="en">${SITE.thisWorks[1]}</span></h2>
     <div class="grid works">${ws.map(workCard).join('')}</div>
@@ -374,23 +866,25 @@ function renderWork(r){
   const chips = w.artists.map(id => `<a onclick="go('/artists/${id}')">${artist(id).name}</a>`).join('');
   const thumbs = Array.from({length:w.imgs}, (_, i) => `<div class="block ph-cover${i===0?' on':''}" data-i="${i+1}">${SITE.img} ${i+1}</div>`).join('');
   const mainCls = w.video ? 'block ph-video main' : 'block ph-cover main';
-  const mainTxt = w.video ? `▶ ${w.title[0]}　${SITE.video[0]}` : `${SITE.img} 1 / ${w.imgs}`;
-  const thanks = w.thanks ? `<dt>${bi(SITE.thanks)}</dt><dd>${w.thanks[0]}<br><span class="en">${w.thanks[1]}</span></dd>` : '';
+  const mainTxt = w.video ? `▶ ${titleMain(w)}　${SITE.video[0]}` : `${SITE.img} 1 / ${w.imgs}`;
+  const meta = w.meta.map(m => `<dt>${bil([m[0], m[1]])}</dt><dd>${bil([m[2], m[3]])}</dd>`).join('');
+  const thanks = w.thanks ? `<dt>${bil(SITE.thanks)}</dt><dd>${w.thanks}</dd>` : '';
+  const hasDesc = w.desc[0].length || w.desc[1].length;
   return `
   <section>
     <div class="head work" style="display:block">
       <div class="gallery">
         <div class="${mainCls}" id="mainImg" data-n="${w.imgs}">${mainTxt}</div>
-        <div class="thumbs" id="thumbs">${thumbs}</div>
+        ${w.imgs ? `<div class="thumbs" id="thumbs">${thumbs}</div>` : ''}
       </div>
       <div class="work-body">
         <div>
-          <p class="name">${w.title[0]}<small>${w.title[1]}</small></p>
+          <p class="name">${titleMain(w)}${titleSub(w) ? `<small>${titleSub(w)}</small>` : ''}</p>
           ${biH('h3', SITE.byArtists)}<div class="chips">${chips}</div>
-          ${biH('h3', SITE.desc)}${paras(w.desc[0])}${paras(w.desc[1], 'en')}
+          ${hasDesc ? biH('h3', SITE.desc) + paras(w.desc[0]) + paras(w.desc[1], 'en') : ''}
         </div>
         <dl>
-          <dt>${bi(SITE.meta)}</dt><dd>${w.meta[0]}<br><span class="en">${w.meta[1]}</span></dd>
+          ${meta}
           ${thanks}
         </dl>
       </div>
@@ -408,7 +902,7 @@ function render(){
   else app.innerHTML = renderHome();
   const base = '臺北資料夾 File in Taipei';
   document.title = r.type === 'artists' ? ((artist(r.id)||{}).name || r.id) + ' | ' + base
-                 : r.type === 'works' ? ((workById(r.id)||{title:[r.id]}).title[0]) + ' | ' + base
+                 : r.type === 'works' ? (workById(r.id) ? titleMain(workById(r.id)) : r.id) + ' | ' + base
                  : base;
   const pageChanged = lastPath === null || lastPath !== r.path;
   lastPath = r.path;
